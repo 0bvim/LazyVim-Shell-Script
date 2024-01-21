@@ -55,6 +55,30 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 # deleting .git directory
 rm -rf ~/.config/nvim/.git
 
+function set_key_map() {
+	echo 'vim.keymap.set("i", "jk", "<ESC>")' >>~/.config/nvim/lua/config/keymaps.lua
+}
+
+function set_identation() {
+	echo '
+-- Use actual tab characters instead of spaces
+vim.opt.expandtab = false
+
+-- Set the number of spaces for each tab
+vim.opt.tabstop = 4
+
+-- Set the number of spaces for automatic indentation
+vim.opt.shiftwidth = 4
+
+-- Enable automatic indentation
+vim.opt.autoindent = true' >>~/.config/nvim/lua/config/options.lua
+}
+
+function 42header() {
+	touch ~/.config/nvim/lua/plugins/42header.lua
+	## insert lua code in 42header.lua
+}
+
 print "Now lazyvim will open and install plugins and setup everything, wait a little bit and them run ':checkhealt'\n to verify if all's fine"
 sleep 5
 
