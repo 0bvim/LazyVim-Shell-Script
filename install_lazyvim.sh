@@ -75,8 +75,27 @@ vim.opt.autoindent = true' >>~/.config/nvim/lua/config/options.lua
 }
 
 function 42header() {
+	echo "installing header plugin, use F1 in normal mode to insert header in your files."
 	touch ~/.config/nvim/lua/plugins/42header.lua
-	## insert lua code in 42header.lua
+	echo '
+return {
+
+	{ "Diogo-ss/42-header.nvim" },
+
+	{
+		"Diogo-ss/42-header.nvim",
+		lazy = false,
+		config = function()
+			local header = require("42header")
+			header.setup({
+				default_map = true, -- default Mapping <F1> in normal mode
+				auto_update = true,  -- update header when saving
+				user = "vde-frei", -- your user
+				mail = "vde-frei@student.42sp.org.br", -- your mail
+			})
+		end
+	},
+}' >>~/.config/nvim/lua/plugins/42header.lua
 }
 
 print "Now lazyvim will open and install plugins and setup everything, wait a little bit and them run ':checkhealt'\n to verify if all's fine"
