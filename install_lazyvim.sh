@@ -74,6 +74,15 @@ vim.opt.shiftwidth = 4
 vim.opt.autoindent = true' >>~/.config/nvim/lua/config/options.lua
 }
 
+# get login
+echo "Insert your login for 42header\n"
+read login
+
+# get email
+echo "Insert your email for 42header\n"
+read email
+
+# function that make all stuff about 42header works
 function 42header() {
 	echo "installing header plugin, use F1 in normal mode to insert header in your files."
 	touch ~/.config/nvim/lua/plugins/42header.lua
@@ -90,12 +99,12 @@ return {
 			header.setup({
 				default_map = true, -- default Mapping <F1> in normal mode
 				auto_update = true,  -- update header when saving
-				user = "vde-frei", -- your user
-				mail = "vde-frei@student.42sp.org.br", -- your mail
+				user = "$login", -- your user
+				mail = "$email", -- your mail
 			})
 		end
 	},
-}' >>~/.config/nvim/lua/plugins/42header.lua
+}' >~/.config/nvim/lua/plugins/42header.lua
 }
 
 print "Now lazyvim will open and install plugins and setup everything, wait a little bit and them run ':checkhealt'\n to verify if all's fine"
