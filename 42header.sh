@@ -1,7 +1,16 @@
-#!bin/bash
+#!/bin/bash
+
+function get_user() {
+	# get login
+	echo "Insert your login for 42header\n"
+	read login
+	# get email
+	echo "Insert your email for 42header\n"
+	read email
+}
 
 function 42header() {
-	echo '
+	echo "
 return {
 
 	{ "Diogo-ss/42-header.nvim" },
@@ -14,12 +23,12 @@ return {
 			header.setup({
 				default_map = true, -- default Mapping <F1> in normal mode
 				auto_update = true,  -- update header when saving
-				user = "$USER", -- your user
-				mail = "your_intra_mail", -- your mail
+				user = $login, -- your user
+				mail = $email, -- your mail
 			})
 		end
 	},
-}' >>~/.config/nvim//lua/plugins/42header.lua
+}" >~/.config/nvim//lua/plugins/42header.lua
 }
 
 function greeting() {
@@ -30,6 +39,7 @@ If you runned it, don't need to use this script. Continue? [Y/N]
 	var_reject='[Nn]|No|no|nops|never|jame'
 	case "$Response" in
 	[Yy] | Yes | yes | yup)
+		get_user
 		echo "Okay $USER, Installing... After installed, press F1 to insert 42header."
 		until 42header; do :; done
 		;;
