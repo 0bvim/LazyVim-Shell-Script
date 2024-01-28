@@ -82,10 +82,10 @@ vim.opt.autoindent = true' >>~/.config/nvim/lua/config/options.lua
 
 function get_user() {
 	# get login
-	echo "Insert your login for 42header\n"
+	echo "Insert your login for 42header"
 	read login
 	# get email
-	echo "Insert your email for 42header\n"
+	echo "Insert your email for 42header"
 	read email
 }
 
