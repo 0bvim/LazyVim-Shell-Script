@@ -10,7 +10,7 @@ function get_user() {
 }
 
 function 42header() {
-	echo "
+	echo '
 return {
 
 	{ "Diogo-ss/42-header.nvim" },
@@ -28,7 +28,7 @@ return {
 			})
 		end
 	},
-}" >~/.config/nvim//lua/plugins/42header.lua
+}' >~/.config/nvim//lua/plugins/42header.lua
 }
 
 function greeting() {

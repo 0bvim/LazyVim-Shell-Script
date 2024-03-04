@@ -49,6 +49,7 @@ install_asdf() {
 		asdf global ripgrep latest &&
 		asdf global lazygit latest &&
 		pip install neovim &&
+		pip install compiledb-plus &&
 		gem install neovim &&
 		gem environment &&
 		npm install -g neovim
@@ -93,7 +94,7 @@ function get_user() {
 function 42header() {
 	echo "installing header plugin, use F1 in normal mode to insert header in your files."
 	touch ~/.config/nvim/lua/plugins/42header.lua
-	echo "
+	echo '
 return {
 
 	{ "Diogo-ss/42-header.nvim" },
@@ -110,8 +111,8 @@ return {
 				mail = $email, -- your mail
 			})
 		end
-	},
-}" >~/.config/nvim//lua/plugins/42header.lua
+	}"
+}' >~/.config/nvim//lua/plugins/42header.lua
 }
 
 install_nerd_font() {
