@@ -77,6 +77,9 @@ vim.opt.tabstop = 4
 -- Set the number of spaces for automatic indentation
 vim.opt.shiftwidth = 4
 
+vim.opt.cindent = true
+vim.g.autoformat = true
+
 -- Enable automatic indentation
 vim.opt.autoindent = true' >>~/.config/nvim/lua/config/options.lua
 }
