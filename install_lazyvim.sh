@@ -77,8 +77,12 @@ vim.opt.tabstop = 4
 -- Set the number of spaces for automatic indentation
 vim.opt.shiftwidth = 4
 
+-- Indent for clang
 vim.opt.cindent = true
-vim.g.autoformat = true
+
+-- let autoformat off, when you active extra
+-- feature for clang, it will not format automatically.
+vim.g.autoformat = false
 
 -- Enable automatic indentation
 vim.opt.autoindent = true' >>~/.config/nvim/lua/config/options.lua
