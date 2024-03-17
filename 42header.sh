@@ -55,3 +55,4 @@ If you runned it, don't need to use this script. Continue? [Y/N]
 }
 
 until greeting; do :; done && echo "done"
+
