@@ -88,6 +88,9 @@ vim.g.autoformat = false
 vim.opt.autoindent = true' >>~/.config/nvim/lua/config/options.lua
 }
 
+declare -g login=""
+declare -g user=""
+
 function get_user() {
 	# get login
 	echo "Insert your login for 42header"
