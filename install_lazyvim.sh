@@ -31,7 +31,7 @@ install_asdf() {
 		asdf plugin add ripgrep &&
 		asdf install fd 9.0.0 &&
 		asdf install cmake latest &&
-		asdf install neovim stable &&
+		asdf install neovim latest &&
 		asdf install nodejs 21.5.0 &&
 		asdf install python 3.11.0 &&
 		asdf install ruby 3.0.0 &&
@@ -72,10 +72,10 @@ function set_identation() {
 vim.opt.expandtab = false
 
 -- Set the number of spaces for each tab
-vim.opt.tabstop = 4
+vim.opt.tabstop =2
 
 -- Set the number of spaces for automatic indentation
-vim.opt.shiftwidth = 4
+vim.opt.shiftwidth = 2
 
 -- Indent for clang
 vim.opt.cindent = true
@@ -87,6 +87,9 @@ vim.g.autoformat = false
 -- Enable automatic indentation
 vim.opt.autoindent = true' >>~/.config/nvim/lua/config/options.lua
 }
+
+declare -g login=""
+declare -g user=""
 
 function get_user() {
 	# get login
@@ -114,11 +117,11 @@ return {
 			header.setup({
 				default_map = true, -- default Mapping <F1> in normal mode
 				auto_update = true,  -- update header when saving
-				user = $login, -- your user
-				mail = $email, -- your mail
+				user = "'$login'", -- your user
+				mail = "'$email'", -- your mail
 			})
 		end
-	}"
+	},
 }' >~/.config/nvim//lua/plugins/42header.lua
 }
 

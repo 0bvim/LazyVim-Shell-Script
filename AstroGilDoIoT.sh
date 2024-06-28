@@ -89,40 +89,6 @@ vim.g.autoformat = false
 vim.opt.autoindent = true' >>~/.config/nvim/lua/config/options.lua
 }
 
-function get_user() {
-	# get login
-	echo "Insert your login for 42header"
-	read login
-	# get email
-	echo "Insert your email for 42header"
-	read email
-}
-
-# function that make all stuff about 42header works
-function 42header() {
-	echo "installing header plugin, use F1 in normal mode to insert header in your files."
-	touch ~/.config/nvim/lua/plugins/42header.lua
-	echo '
-return {
-
-	{ "Diogo-ss/42-header.nvim" },
-
-	{
-		"Diogo-ss/42-header.nvim",
-		lazy = false,
-		config = function()
-			local header = require("42header")
-			header.setup({
-				default_map = true, -- default Mapping <F1> in normal mode
-				auto_update = true,  -- update header when saving
-				user = $login, -- your user
-				mail = $email, -- your mail
-			})
-		end
-	}"
-}' >~/.config/nvim//lua/plugins/42header.lua
-}
-
 install_nerd_font() {
 	# Step 1: Download the font
 	wget -P ~/.local/share/fonts https://github.com/ryanoasis/nerd-fonts/releases/latest/download/Meslo.zip
