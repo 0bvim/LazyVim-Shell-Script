@@ -29,7 +29,7 @@ install_asdf() {
 		asdf plugin add tree-sitter &&
 		asdf plugin add lazygit &&
 		asdf plugin add ripgrep &&
-		asdf install fd 9.0.0 &&
+		asdf install fd latest &&
 		asdf install cmake latest &&
 		asdf install neovim latest &&
 		asdf install nodejs 21.5.0 &&
@@ -40,7 +40,7 @@ install_asdf() {
 		asdf install ripgrep latest &&
 		asdf install lazygit latest &&
 		asdf global cmake latest &&
-		asdf global neovim stable &&
+		asdf global neovim latest &&
 		asdf global nodejs 21.5.0 &&
 		asdf global python 3.11.0 &&
 		asdf global ruby 3.0.0 &&
@@ -87,9 +87,6 @@ vim.g.autoformat = false
 -- Enable automatic indentation
 vim.opt.autoindent = true' >>~/.config/nvim/lua/config/options.lua
 }
-
-declare -g login=""
-declare -g user=""
 
 function get_user() {
 	# get login
